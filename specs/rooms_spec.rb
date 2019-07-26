@@ -18,7 +18,7 @@ class TestRooms < Minitest::Test
     @song2 = Song.new("On The Road Again", "Willie Nelson")
     @songs = [@song1, @song2]
 
-    @room1 = Rooms.new("RockBlock", 17.30, 19.30)
+    @room1 = Rooms.new("RockBlock", 17.30, 19.30, 10)
   end
 
   def test_room_has_a_name()
@@ -46,6 +46,10 @@ class TestRooms < Minitest::Test
   def test_can_add_songs_to_rooms()
     @room1.add_songs_to_rooms(@song1)
     assert_equal(1, @room1.song_count())
+  end
+
+  def test_more_guests_than_room_capacity()
+    assert_equal(true, @room1.more_guests_than_room_capacity)
   end
 
 end
