@@ -2,6 +2,7 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../rooms.rb')
 require_relative('../guests.rb')
+require_relative('../songs.rb')
 
 class TestRooms < Minitest::Test
 
@@ -12,6 +13,10 @@ class TestRooms < Minitest::Test
     @guest3 = Guests.new("Waylon Jennings", 20.30, 22.30)
     @guest4 = Guests.new("Kris Kristofferson", 20.30, 22.30)
     @guests = [@guest1, @guest2, @guest3, @guest4]
+
+    @song1 = Song.new("Man In Black", "Jonny Cash")
+    @song2 = Song.new("On The Road Again", "Willie Nelson")
+    @songs = [@song1, @song2]
 
     @room1 = Rooms.new("RockBlock", 17.30, 19.30)
   end
@@ -36,6 +41,11 @@ class TestRooms < Minitest::Test
   def test_can_check_guests_out_of_room()
     checked_out_guest = @room1.check_guest_out_of_room()
     assert_equal(0, @room1.guest_count())
+  end
+
+  def test_can_add_songs_to_rooms()
+    @room1.add_songs_to_rooms(@song1)
+    assert_equal(1, @room1.song_count())
   end
 
 end

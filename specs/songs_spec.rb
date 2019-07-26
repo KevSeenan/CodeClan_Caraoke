@@ -7,6 +7,7 @@ class TestSong < Minitest::Test
   def setup()
     @song1 = Song.new("Always", "Bon Jovi")
     @song2 = Song.new("Sweet Child of Mine", "Guns 'n' Roses")
+    @songs = []
   end
 
   def test_song_has_a_title()

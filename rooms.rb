@@ -7,6 +7,7 @@ class Rooms
     @check_in = check_in
     @check_out = check_out
     @guests = []
+    @songs = []
   end
 
   def guest_count()
@@ -19,6 +20,14 @@ class Rooms
 
   def check_guest_out_of_room()
     return @guests.pop()
+  end
+
+  def song_count()
+    return @songs.size()
+  end
+
+  def add_songs_to_rooms(song_to_add)
+    @songs << song_to_add
   end
 
 end
