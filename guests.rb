@@ -1,10 +1,11 @@
 class Guests
 
-  attr_reader :name, :booking
+  attr_reader :name, :check_in, :check_out
 
-  def initialize(name, booking)
+  def initialize(name, check_in, check_out)
     @name = name
-    @booking = booking
+    @check_in = check_in
+    @check_out = check_out
   end
 
 end
