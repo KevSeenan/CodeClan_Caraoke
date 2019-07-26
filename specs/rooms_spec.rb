@@ -6,7 +6,7 @@ require_relative('../rooms.rb')
 class TestRooms < Minitest::Test
 
   def setup()
-    @room1 = Rooms.new("RockBlock", 17.30)
+    @room1 = Rooms.new("RockBlock", 17.30, 19.30)
     # @guest1 = Guests.new("Jonny Cash", 20.30, 22.30)
     # @guest2 = Guests.new("Willie Nelson", 20.30, 22.30)
     # @guest3 = Guests.new("Waylon Jennings", 20.30, 22.30)
@@ -20,9 +20,9 @@ class TestRooms < Minitest::Test
   def test_check_room_has_a_check_in_time()
     assert_equal(17.30, @room1.check_in)
   end
-  #
-  # def test_check_room_has_a_check_out_time()
-  #   assert_equal(19.30, @room1.check_out)
-  # end
+  
+  def test_check_room_has_a_check_out_time()
+    assert_equal(19.30, @room1.check_out)
+  end
 
 end
