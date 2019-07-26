@@ -33,4 +33,9 @@ class TestRooms < Minitest::Test
     assert_equal(1, @room1.guest_count())
   end
 
+  def test_can_check_guests_out_of_room()
+    checked_out_guest = @room1.check_guest_out_of_room()
+    assert_equal(0, @room1.guest_count())
+  end
+
 end

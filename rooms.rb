@@ -17,4 +17,8 @@ class Rooms
     @guests << guest_to_add
   end
 
+  def check_guest_out_of_room()
+    return @guests.pop()
+  end
+
 end
